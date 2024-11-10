@@ -2,22 +2,22 @@ import streamlit as st
 import requests
 
 # Set page title and header
-st.title("LLama Hackathon Quickstart")
-st.text("FastAPI, Restack, Together AI, LLamaIndex")
+st.title("Los Angeles County Court Case Search")
+st.text("Welcome to the Court Case Search. Search your legal question and get a summary of the case.")
 
 # Create text area for user input with session state
 if "user_input" not in st.session_state:
     st.session_state.user_input = ""
 
-query = st.text_input("Query HN", key="query", value="ai")
-count = st.number_input("Number of results", key="count", value=5)
+query = st.text_input("Search your legal question", key="query", value="Searchching for case information")
+count = st.number_input("Number of results", key="count", value=1)
 
 # Initialize response history in session state
 if "response_history" not in st.session_state:
     st.session_state.response_history = []
 
 # Create button to send request
-if st.button("Search HN"):
+if st.button("Search Court Case"):
     if query:
         try:
             with st.spinner('Searching...'):
